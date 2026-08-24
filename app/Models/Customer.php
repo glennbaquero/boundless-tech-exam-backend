@@ -18,4 +18,18 @@ class Customer extends Model
     {
         return $this->hasMany(Booking::class);
     }
+
+    /**
+     * Strip everything but digits and a leading "+" so the same number
+     * always matches regardless of spacing/formatting/punctuation.
+     */
+    public static function normalizePhone(string $phone): string
+    {
+        return preg_replace('/[^\d+]/', '', $phone) ?? $phone;
+    }
+
+    public static function findByPhone(string $phone): ?self
+    {
+        return static::where('phone', static::normalizePhone($phone))->first();
+    }
 }
