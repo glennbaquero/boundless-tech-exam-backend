@@ -1,0 +1,25 @@
+.git
+.gitignore
+.gitattributes
+.editorconfig
+.npmrc
+vendor
+node_modules
+.env
+.env.example
+storage/logs/*
+storage/framework/cache/*
+storage/framework/cache/data/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/*.key
+database/*.sqlite
+# Locally generated dev-mode caches (include dev-only providers like Boost/Pail)
+bootstrap/cache/*.php
+tests
+phpunit.xml
+.phpunit.result.cache
+README.md
+Dockerfile
+.dockerignore
+render.yaml
